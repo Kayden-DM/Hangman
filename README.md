@@ -2,7 +2,7 @@ Simple hangman that gives you 6 lives.
 
 Features:
 Uses .len 
-Uses 'for i' to 
+Uses 'for i' to check where the letter is in the word
 
 Learned:
 How to use 'for i'
