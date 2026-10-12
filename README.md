@@ -1,3 +1,5 @@
+This README is made with AI
+
 🎮 Python Hangman Game
 A simple command-line Hangman game built with Python. Players try to guess a hidden word one letter at a time before running out of lives. It's a great beginner project for learning about lists, loops, functions, global variables, and random selection in Python.
 
