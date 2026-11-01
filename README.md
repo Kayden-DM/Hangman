@@ -1,24 +1,43 @@
-Hangman
-A command-line Python Hangman game where the player guesses letters to reveal a random word before running out of lives.
+## Hangman
+A command-line hangman game written in Python. It uses the random module to pick a word from a list, and lets the player guess letters one at a time with six lives.
 
-Concepts Used
-Lists — guessed starts as underscores and is updated as letters are found.
+## Features
+Random Word — Picks a random word from a list of 50 words each time a game starts.
 
-Random Module — random.choice(words) picks a random word from a 50-word list.
+Hidden Word Display — Shows the word as underscores and reveals correctly guessed letters in their positions.
 
-Global Variables — lives, word, and guessed are modified inside play() via global.
+Six Lives — Decreases a life for each wrong guess and ends the game when they run out.
 
-Features
-Random Word Selection — a new word is chosen each round from a large word list.
+Win Detection — Ends the game when every letter has been guessed.
 
-Six Lives — wrong guesses reduce lives; the word is revealed on a loss.
+Play Again — Restarts with a fresh word and reset lives if the user answers y.
 
-Win/Loss Detection — checks for a fully revealed word to trigger a win.
+Input Validation — Re-prompts if the user gives an invalid answer when asked to play again.
 
-Improvements
-Track Repeated Guesses — guessing the same letter twice currently costs a life or re-counts; store past guesses and warn instead.
+## Technologies Used
+text
+| Technology | Purpose |
+|---|---|
+| Python | Application logic |
+| `random` | Picks a random word |
+| List (`words`) | Stores the word pool |
+| List (`guessed`) | Tracks revealed letters |
+| `global` | Resets `lives`, `word`, and `guessed` between games |
+| `input()` / `print()` | Console interaction |
+| Recursion | Restarts the game via `play()` and `again()` |
+<!-- -->
+## How to Use It
+Install Python 3.6 or newer from python.org and make sure it's added to your PATH.
 
-Validate Input — single-letter check needed; empty or multi-letter input breaks the logic.
+Save the code as hangman.py.
 
-Replace Recursion & Globals — again() calls play() recursively; a loop plus passing state as arguments is cleaner and avoids deep call stacks.
+Open a terminal in the folder containing the file.
 
+Run python hangman.py.
+
+Guess one letter at a time; you have 6 lives, and you can play again by answering y when prompted.
+
+## Improvements
+Validate letter guesses — the current code doesn't check that the input is a single letter, so entering a full word or number behaves unpredictably; check len(guess) == 1 and guess.isalpha() before processing.
+
+Use a loop instead of recursion — play() and again() call each other every round, which stacks frames and will eventually hit Python's recursion limit; a while True loop is safer.
