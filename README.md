@@ -15,7 +15,6 @@ Play Again — Restarts with a fresh word and reset lives if the user answers y.
 Input Validation — Re-prompts if the user gives an invalid answer when asked to play again.
 
 ## Technologies Used
-text
 | Technology | Purpose |
 |---|---|
 | Python | Application logic |
